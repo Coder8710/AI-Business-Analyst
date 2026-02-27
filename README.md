@@ -1,54 +1,46 @@
-# MarketResearchCrew Crew
+# AI Business Analyst
 
-Welcome to the MarketResearchCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An autonomous multi-agent AI system that conducts comprehensive business analysis for AI product ideas. The system employs five specialized AI agents working sequentially to deliver investment-grade business intelligence reports.
 
-## Installation
+## Overview
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+This project leverages the CrewAI framework to create a sophisticated business analysis pipeline that automates the research and strategic planning process typically performed by business consultants and analysts. Each AI agent specializes in a specific domain and builds upon the findings of previous agents to generate actionable insights.
 
-First, if you haven't already, install uv:
+## Architecture
 
-```bash
-pip install uv
-```
+The system consists of **five specialized AI agents** that execute tasks sequentially:
 
-Next, navigate to your project directory and install the dependencies:
+1. **Market Research Specialist** - Analyzes market size, growth trends, industry dynamics, regulatory landscape, and technology readiness for the AI product space.
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+2. **Competitive Intelligence Analyst** - Identifies and evaluates direct and indirect competitors, analyzes their offerings, pricing models, market positioning, and uncovers competitive gaps and opportunities.
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+3. **Customer Insights Researcher** - Develops detailed customer personas, maps customer journeys, identifies pain points, analyzes willingness to pay, and recommends customer acquisition channels.
 
-- Modify `src/market_research_crew/config/agents.yaml` to define your agents
-- Modify `src/market_research_crew/config/tasks.yaml` to define your tasks
-- Modify `src/market_research_crew/crew.py` to add your own logic, tools and specific args
-- Modify `src/market_research_crew/main.py` to add custom inputs for your agents and tasks
+4. **Product Strategy Advisor** - Designs MVP feature prioritization, differentiation strategy, technical architecture, development roadmap, and establishes success metrics based on all prior research.
 
-## Running the Project
+5. **Business Analyst** - Synthesizes all findings into a comprehensive report including pricing strategy, revenue model, financial projections, go-to-market plan, risk analysis, and final go/no-go recommendation.
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+## Capabilities
 
-```bash
-$ crewai run
-```
+- Automated web search and data gathering (Serper API, web scraping, Selenium)
+- Market sizing, competitive analysis, customer persona development
+- Product strategy and MVP feature prioritization
+- Financial projections and go-to-market planning
+- Investment-grade business reports (3000-4000 words) in markdown format
 
-This command initializes the market_research_crew Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## Technologies
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+- **Framework:** CrewAI 1.9.3 (Multi-agent orchestration)
+- **Language:** Python 3.10+
+- **LLM:** OpenAI GPT-5 Mini (gpt-5-mini-2025-08-07)
+- **Research Tools:** SerperDevTool, ScrapeWebsiteTool, SeleniumScrapingTool
+- **Process:** Sequential task execution with contextual awareness
 
-## Understanding Your Crew
+## Use Cases
 
-The market_research_crew Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the MarketResearchCrew Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+- Evaluating AI product opportunities before development
+- Generating market research reports for investor pitches
+- Competitive intelligence gathering for strategic planning
+- Customer discovery and persona development
+- Product-market fit assessment
+- Investment due diligence for AI startups
